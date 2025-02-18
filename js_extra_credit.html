@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript extra credit problems</title>
+  
+</head>
+<body>
+    <script>
+        function  toggleCheck() {
+            var check_all = document.getElementById("father_check");
+            var kid_check = document.querySelectorAll(".kid_check");
+            var check_all_label = document.getElementById('check_all_label');
+            // check_all.checked = !check_all.checked; 
+            if(check_all.checked) { 
+               check_all_label.textContent = "Uncheck all"
+            } else { 
+                check_all_label.textContent = "Check all"
+            }
+            
+            kid_check.forEach(function(kid_check) { 
+                kid_check.checked = check_all.checked;
+            });
+            
+                
+        }
+    </script>
+
+    <h1>Javascript Exra Credit</h1>
+    <h2>Problem 2: </h2>
+    <ul>
+        <li>
+        <input type="checkbox" id="father_check" name="check_all" onchange="toggleCheck()">
+        <label for="check_all" id="check_all_label">Check all</label> 
+        </li>
+
+        <hr>
+
+        <li>
+        <input type="checkbox" class="kid_check" name="first">
+        <label for="first">first</label>
+        </li>
+
+        <li>
+        <input type="checkbox" class ="kid_check" name="second">
+        <label for="second">second</label>
+        </li>
+
+        <li>
+        <input type="checkbox" class="kid_check" name="third">
+        <label for="third">third</label>
+        </li>
+
+        <li>
+        <input type="checkbox" class ="kid_check" name="fourth">
+        <label for="fourth">fourth</label>
+        </li>
+        
+    </ul>
+    
+</body>
+</html>
